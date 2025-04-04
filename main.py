@@ -1,14 +1,18 @@
 from variables import *
 from functions import *
+import time as t
 
 
 def generate():
+    start_time = t.time()
+    population = population_backup
     with open(script_path+'cnp-uri.csv', 'w', newline = '') as csvfile:
         for _ in range(1000000):
             thingy = generate_cnp()
             csvfile.write(f"{thingy[0]}, {thingy[1]}\n")
+    print(f"\nGeneration took {t.time() - start_time:2} seconds!\n")
 
-print('Please wait...')
+print('Please wait until generation is finished...')
 generate()
 print('\nType \'help\' to see a list of commands\n')
 
