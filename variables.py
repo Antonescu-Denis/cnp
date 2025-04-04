@@ -14,6 +14,7 @@ population = [0,
               3.6, 1.7, 1.1, 2.1, 3.4,
               1.7, 3.5, 1.0, 1.9, 1.8,
               1.7, 9.0]
+population_backup = population[:]
 for i in range(1, len(population)):
     population[i] = int(population[i]*10000)
 counties = list(range(0, 43))
